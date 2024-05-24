@@ -126,7 +126,7 @@ class Cohort:
         self,
         col_value,
         period_date='M',
-        aggfunc='sum',
+        aggfunc_cust='sum',
         aggfunc_cohort='sum',
         top_n=5,
         percentage=False
@@ -138,11 +138,11 @@ class Cohort:
         
         # Aggregate for each cohort and customer
         df_agg_cohort_cust = df_group_cohort_cust.agg(
-            value=(col_value, aggfunc),
+            value=(col_value, aggfunc_cust),
             n_transactions=(self.col_order_id, 'nunique'),
             customers=(self.col_customer_id, 'first')
         )
-        col_name_value = f"{col_value} ({aggfunc})"
+        col_name_value = f"{col_value} ({aggfunc_cust})"
         df_agg_cohort_cust = df_agg_cohort_cust.rename(
             {'value': col_name_value}, axis=1
         )
