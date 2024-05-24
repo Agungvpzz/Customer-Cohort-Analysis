@@ -1,6 +1,7 @@
 # Customer Cohort Analysis
 
 ## 1. Introduction
+This report presents an in-depth analysis of customer cohorts. The analysis centers around understanding customer purchasing behavior, retention, and revenue patterns across different cohorts. Key findings shed light on customer trends, highlight high-performing cohorts, and provide actionable insights to enhance sales and customer satisfaction.
 
 ## 2. Data Understanding
 The dataset can be accessed at the following link: https://www.kaggle.com/datasets/mashlyn/online-retail-ii-uci/
