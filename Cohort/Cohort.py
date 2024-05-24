@@ -76,32 +76,32 @@ class Cohort:
         
         return df
     
-    def get_cohort_summary(self, col_value, period_date='M', aggfunc='sum'):
+    def get_cohort_summary(self, col_value, period_date='M'):
         """
-        Generates a cohort summary with aggregated metrics.
-
+        Return a cohort summary with sum (customer) and sum (cohort) aggregated
+        The first grouped by customer, and then grouped by cohort date
+    
         Parameters:
         - col_value (str): The column to aggregate.
-        - period_date (str): The period for grouping dates (default is 'M' for monthly).
-        - aggfunc (str): The aggregation function to apply (default is 'sum').
+        - period_date (str): The period for grouping dates (default is 'M' for monthly).        
 
         Returns:
         - DataFrame: A dataframe with cohort summary metrics.
+        Columns:
+        - sum_value_cohort: SUM grouped by Customer and SUM grouped by Cohort
+        - mean_value_cohort: sum_value_cohort / num_cohort_members
+        - num_transactions: Number of total transactions
+        - num_cohort_members: Number of cohort members
         """
         
         # Aggregating customer data
         df_cust = self.df.groupby(self.col_customer_id).agg(
-            cohort_date=(self.col_order_date,
-                         'min'),  # customer first purchase date
-            agg_value=(col_value, aggfunc),
+            cohort_date=(self.col_order_date, 'min'),  # first purchase date
+            agg_value=(col_value, 'sum'),
             num_transactions=(self.col_order_id, 'nunique'),
             num_cohort_members=(self.col_customer_id, 'nunique'),
             list_cohort_members=(self.col_customer_id, 'first')
         )
-        
-        # Renaming aggregated column
-        col_agg_value = f"{col_value} ({aggfunc})"
-        df_cust = df_cust.rename({'agg_value': col_agg_value}, axis=1)
         
         # Converting cohort date to the specified period
         df_cust['cohort_date'] = df_cust['cohort_date'].dt.to_period(
@@ -110,8 +110,8 @@ class Cohort:
         
         # Grouping by cohort date and calculating summary metrics
         df_cust = df_cust.groupby('cohort_date').agg(
-            sum_value_cohort=(col_agg_value, 'sum'),
-            mean_value_cohort=(col_agg_value, 'mean'),
+            sum_value_cohort=('agg_value', 'sum'),
+            mean_value_cohort=('agg_value', 'mean'),
             num_transactions=('num_transactions', 'sum'),
             num_cohort_members=('num_cohort_members', 'count'),
             list_cohort_members=('list_cohort_members', 'unique')
