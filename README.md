@@ -12,18 +12,20 @@ The Online Retail II dataset provides detailed insights into the sales activitie
 Customer cohort analysis enables businesses to segment customers based on shared behaviors and analyze these groups over time, aiming to improve retention by identifying churn patterns and enhancing customer experiences.
 
 ## 4. Objectives
-1. **Pattern Cohort Behaviour Discovery**: Identify cohorts' behaviour along dates, individually and collectively.
-2. **Enhancing Retention Rates**: Identify which cohort needs to get more attention and 
-3. **Discover Seasonal Effect**: Identify which period of date that promotion trigger is commonly needed across cohorts.
-
-## 
+1. **Pattern Cohort Behaviour Discovery**: Identify and analyze behavioral patterns of different cohorts over time to understand their purchasing habits, frequency, and value.
+2. **Enhancing Retention Rates**: Determine which cohorts exhibit lower retention rates and develop targeted strategies to improve retention for these specific groups.
+3. **Discover Seasonal Effect**: Identify key periods during the year when customer sales typically decline or stagnate, indicating a potential need for promotional activities.
 
 ## 5. Methodology
 - We divided our customer cohort based on the starting quarter of the customers purchased
 - We notice the unequal distribution of cohort dates. In the first quarter, there is only 1 month left (2009-Dec)
 - We used Python and utilized Python packages, such as Pandas for data analysis and Plotly for data visualization.
 
-## 6. Results and Analysis
+## 6. Hypothesis
+- Hypothesis: Customers who make frequent purchases in the first few months are more likely to become repeat customers.
+- Hypothesis: Customers with higher initial purchase amounts tend to have higher retention rates.
+
+## 7. Results and Analysis
 ### Sales Journey in each Cohort
 ![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/12fd57d5-f551-45c0-bd60-ef9b46963a26)
 
