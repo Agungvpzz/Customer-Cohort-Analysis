@@ -22,8 +22,8 @@ Customer cohort analysis enables businesses to segment customers based on shared
 - We used Python and utilized Python packages, such as Pandas for data analysis and Plotly for data visualization.
 
 ## 6. Hypothesis
-- Hypothesis: Customers who make frequent purchases in the first few months are more likely to become repeat customers.
-- Hypothesis: Customers with higher initial purchase amounts tend to have higher retention rates.
+- Customers who make frequent purchases in the first few months are more likely to become repeat customers.
+- Customers with higher initial purchase amounts tend to have higher retention rates.
 
 ## 7. Results and Analysis
 ### Sales Journey in each Cohort
