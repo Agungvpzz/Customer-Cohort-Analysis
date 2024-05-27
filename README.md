@@ -18,6 +18,7 @@ Customer cohort analysis enables businesses to segment customers based on shared
 
 ## 5. Methodology
 - We divided our customer cohort based on the month the customers purchased
+- We selected only cohorts aged over 12 months.
 - We used Python and utilized Python packages, such as Pandas for data analysis and Plotly for data visualization.
 
 ## 6. Hypothesis
