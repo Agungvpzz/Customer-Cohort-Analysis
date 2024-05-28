@@ -17,8 +17,8 @@ Customer cohort analysis enables businesses to segment customers based on shared
 3. **Discover Seasonal Effect**: Identify key periods during the year when customer sales typically decline or stagnate, indicating a potential need for promotional activities.
 
 ## 5. Methodology
-- We divided our customer cohort based on the starting quarter of the customers purchased
-- We notice the unequal distribution of cohort dates. In the first quarter, there is only 1 month left (2009-Dec)
+- We divided our customer cohort based on the month the customers purchased
+- We selected only cohorts aged over 12 months.
 - We used Python and utilized Python packages, such as Pandas for data analysis and Plotly for data visualization.
 
 ## 6. Hypothesis
