@@ -77,50 +77,68 @@ class Cohort:
         return df
     
     def get_cohort_summary(self, col_value, period_date='M'):
-        """
-        Return a cohort summary with sum (customer) and sum (cohort) aggregated
-        The first grouped by customer, and then grouped by cohort date
-    
-        Parameters:
-        - col_value (str): The column to aggregate.
-        - period_date (str): The period for grouping dates (default is 'M' for monthly).        
-
-        Returns:
-        - DataFrame: A dataframe with cohort summary metrics.
-        Columns:
-        - sum_value_cohort: SUM grouped by Customer and SUM grouped by Cohort
-        - mean_value_cohort: sum_value_cohort / num_cohort_members
-        - num_transactions: Number of total transactions
-        - num_cohort_members: Number of cohort members
-        """
+        df = self.df.copy()
+        
+        name_period = f"Date Period ({period_date})"
+        name_age_cohort = "age"
+        
+        cohort_map = df.groupby(self.col_customer_id)[self.col_order_date].min()
+        cohort_map = cohort_map.dt.to_period(period_date)
+        df['Cohort'] = df[self.col_customer_id].map(cohort_map.to_dict())
+        df[name_period] = df[self.col_order_date].dt.to_period(period_date)
         
         # Aggregating customer data
-        df_cust = self.df.groupby(self.col_customer_id).agg(
-            cohort_date=(self.col_order_date, 'min'),  # first purchase date
-            agg_value=(col_value, 'sum'),
-            num_transactions=(self.col_order_id, 'nunique'),
-            num_cohort_members=(self.col_customer_id, 'nunique'),
-            list_cohort_members=(self.col_customer_id, 'first')
+        df_agg_cust = df.groupby(
+            ['Cohort', self.col_customer_id], as_index=False
         )
-        
-        # Converting cohort date to the specified period
-        df_cust['cohort_date'] = df_cust['cohort_date'].dt.to_period(
-            period_date
+        df_agg_cust = df_agg_cust.agg(
+            sum_cust_value=(col_value, 'sum'),
+            num_transactions=(self.col_order_id, 'nunique'),
+            cohort_members=(self.col_customer_id, 'first')
         )
         
         # Grouping by cohort date and calculating summary metrics
-        df_cust = df_cust.groupby('cohort_date').agg(
-            sum_value_cohort=('agg_value', 'sum'),
-            mean_value_cohort=('agg_value', 'mean'),
-            num_transactions=('num_transactions', 'sum'),
-            num_cohort_members=('num_cohort_members', 'count'),
-            list_cohort_members=('list_cohort_members', 'unique')
+        df_agg_cust = df_agg_cust.groupby('Cohort').agg(
+            mean_cust_value=('sum_cust_value', 'mean'),
+            std_cust_value=('sum_cust_value', 'std'),
+            total_transactions=('num_transactions', 'sum'),
+            mean_cust_transactions=('num_transactions', 'mean'),
+            size=(self.col_customer_id, 'count'),
+            members=('cohort_members', 'unique')
         )
         
-        # Renaming index
-        df_cust.index.name = 'Cohort'
+        # Date Aggregating
+        df_agg_date = df.groupby(['Cohort', name_period], as_index=False)
+        df_agg_date = df_agg_date.agg(
+            sum_date_value=(col_value, 'sum'),
+            num_transactions=(self.col_order_id, 'nunique')
+        )
         
-        return df_cust
+        # Grouping by cohort date and calculating date summary metrics
+        df_agg_date = df_agg_date.groupby('Cohort').agg(
+            mean_date_transactions=('num_transactions', 'mean'),
+            mean_date_value=('sum_date_value', 'mean'),
+            std_date_value=('sum_date_value', 'std'),
+            total_value=('sum_date_value', 'sum'),
+            age_cohort=(name_period, 'size')
+        )
+        df_agg_date = df_agg_date.rename(
+            {'age_cohort': name_age_cohort}, axis=1
+        )
+        
+        # Merging customer and date aggregations
+        df_summary = df_agg_cust.merge(df_agg_date, on='Cohort')
+        df_summary.columns = df_summary.columns.map(
+            lambda x: x.replace('value', col_value.lower())
+        )
+        COLS = [
+            name_age_cohort, 'size', 'members', 'total_transactions',
+            'mean_cust_transactions', 'mean_date_transactions', 'total_sales',
+            'mean_cust_sales', 'std_cust_sales', 'mean_date_sales',
+            'std_date_sales'
+        ]
+        
+        return df_summary[COLS]
     
     def get_top_contributors(
         self,

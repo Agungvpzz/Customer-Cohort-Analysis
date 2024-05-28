@@ -51,7 +51,7 @@ class AnalyzeCohortDate(CohortDate):
             inactive = set(base).difference(active)
             
             reports[cohort] = {
-                'initial': len(base),
+                'size': len(base),
                 'inactive_n': len(inactive),
                 'inactive_pctg': len(inactive) / len(base),
                 'inactive': inactive,
