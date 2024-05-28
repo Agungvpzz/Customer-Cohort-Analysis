@@ -35,6 +35,13 @@ The line chart shows that the first cohort (2009-12) has the highest sales compa
 All cohorts lose over 50% of their customer retention after the first month. <br>
 ![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/c42ea4c5-b1cb-4f8a-9cf0-5df6a391c704)
 
+### Cohort Member Composition
+![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/72fe38e4-a9ce-476c-8eac-da1602882c61)
+<br>As you can see, the first cohort (Dec 2009) has the highest number of members, consistently having twice as many as the other cohorts
+
+### Cohort Sales Composition
+![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/02ca951c-6447-4fdc-9e54-a76ae6422a1b)
+<br>The first cohort (Dec 2009) contributes around 55% of total sales, while the other cohorts each contribute less than 10%
 
 
 
