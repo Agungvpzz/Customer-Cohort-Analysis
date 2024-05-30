@@ -20,6 +20,7 @@ Customer cohort analysis enables businesses to segment customers based on shared
 - We divided our customer cohort based on the month the customers purchased
 - We selected only cohorts aged over 12 months.
 - We used Python and utilized Python packages, such as Pandas for data analysis and Plotly for data visualization.
+- Since December 2011 is not fully recorded in the data, we removed all records from that date
 
 ## 6. Hypothesis
 - Customers who make frequent purchases in the first few months are more likely to become repeat customers.
@@ -27,21 +28,20 @@ Customer cohort analysis enables businesses to segment customers based on shared
 
 ## 7. Results and Analysis
 ### Cohort Member Composition
-![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/72fe38e4-a9ce-476c-8eac-da1602882c61)
+![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/08c59e6c-4f8c-4bd6-bc37-0b772cfc75ad)
 <br>As you can see, the first cohort (Dec 2009) has the highest number of members, consistently having twice as many as the other cohorts
 
 ### Cohort Sales Composition
-![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/02ca951c-6447-4fdc-9e54-a76ae6422a1b)
+![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/08312fc4-5c8c-4148-92a0-a119898f312e)
 <br>The first cohort (Dec 2009) contributes around 55% of total sales, while the other cohorts each contribute less than 10%
 
 ### Customer Retention in each Cohort
 All cohorts lose over 50% of their customer retention after the first month. <br>
-![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/c42ea4c5-b1cb-4f8a-9cf0-5df6a391c704)
 ![customer retention 2](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/8d2a6430-ed01-4664-878d-891fd9ef3317)
 
 ### Sales Retention in each Cohort
 The line chart shows that the first cohort (2009-12) has the highest sales compared to other cohorts throughout the entire period. We can straightforwardly say that this cohort is the backbone of the company. <br>
-![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/a3f0c883-a740-467a-8f68-449fbf5968eb)
+![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/16ac3eac-d133-4944-92bd-124990342027)
 ![sales retention](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/c57f1cb4-9610-48f1-9eb9-0fc26ab28c1a)
 <br>Almost all cohorts lose above 50% of their sales retention by the second month and tend to steady afterward <br>
 
