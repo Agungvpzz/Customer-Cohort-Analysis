@@ -36,23 +36,31 @@ Customer cohort analysis enables businesses to segment customers based on shared
 <br>The first cohort (Dec 2009) contributes around 55% of total sales, while the other cohorts each contribute less than 10%
 
 ### Customer Retention in each Cohort
-All cohorts lose over 50% of their customer retention after the first month. <br>
+With a line chart displaying the first 12 months of each cohort's journey, we can clearly identify which cohorts are valuable for the business and observe common patterns across cohorts. <br>
 ![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/8cb06b45-3fe5-4234-b806-ac7fba581de5)
-![customer retention](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/ab227baf-133d-4052-a4af-21f23febd893)
+**The line chart shows that:**
+- The first cohort, December 2009, is the most valuable for the business due to its large number of members.
+- All cohorts lose over 50% of their customer retention after the first month.
 <br>
 
-- The heatmap demonstrates that 9 cohorts had their lowest retention in February 2011.
-- The heatmap shows that 9 cohorts reached their highest customer retention for 10 cohorts.
+The heatmap will help us identify patterns across cohorts by comparing the condition of each cohort during the same period (rows) and different periods (columns), both among different cohorts (row comparison) and within each cohort itself (column comparison). <br>
+![customer retention](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/ab227baf-133d-4052-a4af-21f23febd893)
+**The heatmap shows us:**
+- That 9 cohorts had their lowest retention in February 2011, followed by January 2011 with 8 cohorts.
+- That 10 cohorts reached their highest customer retention in November 2010, followed by October 2010 with 9 cohorts.
 
 ### Sales Retention in each Cohort
-- The line chart shows that the first cohort (2009-12) has the highest sales compared to other cohorts throughout the entire period.
-- Almost all cohorts lose above 50% of their sales retention by the second month and tend to steady afterward <br><br>
+
 ![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/16ac3eac-d133-4944-92bd-124990342027)
-![sales retention](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/cd91d17b-85e7-4f44-b313-7928b3ca0848)
+**The line chart shows that:**
+- The first cohort, December 2009, has the highest sales compared to other cohorts.
+- Almost all cohorts lose over 50% of their sales retention by the second month and tend to stabilize below 50% afterward (except cohort December 2009).
 <br>
 
-- Based on the heatmap, 9 cohorts experienced their lowest retention in February 2011.
-- According to the heatmap, November 2010 had the highest retention for 9 cohorts.
+![sales retention](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/cd91d17b-85e7-4f44-b313-7928b3ca0848)
+**The heatmap shows us:**
+- 9 cohorts experienced their lowest retention in February 2011, followed by April 2011 with 5 cohorts.
+- November 2010 had the highest retention for 9 cohorts, followed by October 2010 with 7 cohorts.
 
 ### Inactive Customers Over 6 Months in Each Cohort
 
