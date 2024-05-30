@@ -26,14 +26,17 @@ Customer cohort analysis enables businesses to segment customers based on shared
 - Customers with higher initial purchase amounts tend to have higher retention rates.
 
 ## 7. Results and Analysis
-### Sales Journey in each Cohort
+### Sales Retention in each Cohort
 The line chart shows that the first cohort (2009-12) has the highest sales compared to other cohorts throughout the entire period. We can straightforwardly say that this cohort is the backbone of the company. <br>
 ![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/a3f0c883-a740-467a-8f68-449fbf5968eb)
+![sales retention](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/c57f1cb4-9610-48f1-9eb9-0fc26ab28c1a)
 <br>Almost all cohorts lose above 50% of their sales retention by the second month and tend to steady afterward <br>
 
 ### Customer Retention in each Cohort
 All cohorts lose over 50% of their customer retention after the first month. <br>
 ![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/c42ea4c5-b1cb-4f8a-9cf0-5df6a391c704)
+![customer retention 2](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/8d2a6430-ed01-4664-878d-891fd9ef3317)
+
 
 ### Cohort Member Composition
 ![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/72fe38e4-a9ce-476c-8eac-da1602882c61)
