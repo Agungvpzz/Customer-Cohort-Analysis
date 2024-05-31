@@ -100,7 +100,7 @@ class Cohort:
         # Grouping by cohort date and calculating summary metrics
         df_agg_cust = df_agg_cust.groupby('Cohort').agg(
             mean_cust_value=('sum_cust_value', 'mean'),
-            std_cust_value=('sum_cust_value', 'std'),
+            skew_cust_value=('sum_cust_value', 'skew'),
             total_transactions=('num_transactions', 'sum'),
             mean_cust_transactions=('num_transactions', 'mean'),
             size=(self.col_customer_id, 'count'),
@@ -118,7 +118,7 @@ class Cohort:
         df_agg_date = df_agg_date.groupby('Cohort').agg(
             mean_date_transactions=('num_transactions', 'mean'),
             mean_date_value=('sum_date_value', 'mean'),
-            std_date_value=('sum_date_value', 'std'),
+            skew_date_value=('sum_date_value', 'skew'),
             total_value=('sum_date_value', 'sum'),
             age_cohort=(name_period, 'size')
         )
@@ -131,12 +131,16 @@ class Cohort:
         df_summary.columns = df_summary.columns.map(
             lambda x: x.replace('value', col_value.lower())
         )
-        COLS = [
-            name_age_cohort, 'size', 'members', 'total_transactions',
-            'mean_cust_transactions', 'mean_date_transactions', 'total_sales',
-            'mean_cust_sales', 'std_cust_sales', 'mean_date_sales',
-            'std_date_sales'
-        ]
+        COLS = list(
+            map(
+                lambda x: x.replace('value', col_value.lower()), [
+                    name_age_cohort, 'size', 'members', 'total_transactions',
+                    'mean_cust_transactions', 'mean_date_transactions',
+                    'total_value', 'mean_cust_value', 'skew_cust_value',
+                    'mean_date_value', 'skew_date_value'
+                ]
+            )
+        )
         
         return df_summary[COLS]
     
