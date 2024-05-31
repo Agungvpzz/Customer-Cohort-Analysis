@@ -23,8 +23,8 @@ Customer cohort analysis enables businesses to segment customers based on shared
 - Since December 2011 is not fully recorded in the data, we removed all records from that date
 
 ## 6. Hypothesis
-- Customers who make frequent purchases in the first few months are more likely to become repeat customers.
-- Customers with higher initial purchase amounts tend to have higher retention rates.
+- There is at least one cohort that differs significantly from the others.
+- There is at least one time period that causes cohort activities to differ significantly from other periods.
 
 ## 7. Results and Analysis
 ### Cohort Member Composition
