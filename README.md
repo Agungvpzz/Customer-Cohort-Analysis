@@ -70,16 +70,12 @@ The heatmap will help us identify patterns across cohorts by comparing the condi
 - The first cohort, December 2009, has the lowest number of inactive customers at 34%.
 
 ## 8. Conclusion
-- The first cohort, December 2009, has made the most significant contribution to sales. This is primarily because it has the largest number of members among all cohorts, making it stand out from the rest.
+- The first cohort, December 2009, has made the most significant contribution to sales by over 50% of total sales. This is primarily because it has the largest number of members among all cohorts, making it stand out from the rest.
 - Almost all cohorts lose over 50% of their performance, both in sales and customer retention, by the second month from their establishment.
 - October and November are the most active months for each cohort. Meanwhile, January, February, and April are the months where cohort performance declines.
+- During the last 6 months, over 50% of customers have been inactive, where they have contributed 12% to total sales.
 
 ## 9. Recommendation
 1. Customer Engagement in Quarter 1. Pay special attention to customer engagement and satisfaction during Quarter 1. Conduct customer surveys, analyze feedback, and identify pain points to enhance the customer experience, particularly in the first quarter of each year.
 2. Optimize Sales Strategies. Optimize sales strategies for cohorts with more than 100 members. Larger cohorts naturally contribute significantly to sales. Focus on enhancing customer engagement and satisfaction within these cohorts to maximize their potential.
-
-### Key Findings
-
-### Future Development
-
 
