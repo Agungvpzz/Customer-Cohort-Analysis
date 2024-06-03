@@ -1,3 +1,6 @@
+> [!NOTE]
+> If you encounter an error with the Jupyter Notebook on GitHub, please use this link [nbviewer](https://nbviewer.org/github/Agungvpzz/Customer-Cohort-Analysis/blob/main/Cohort%20Analysis.ipynb)
+
 # Customer Cohort Analysis
 
 ## 1. Introduction
