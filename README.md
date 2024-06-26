@@ -25,11 +25,7 @@ Customer cohort analysis enables businesses to segment customers based on shared
 - We used Python and utilized Python packages, such as Pandas for data analysis and Plotly for data visualization.
 - Since December 2011 is not fully recorded in the data, we removed all records from that date
 
-## 6. Hypothesis
-- There is at least one cohort that differs significantly from the others.
-- There is at least one time period that causes cohort activities to differ significantly from other periods.
-
-## 7. Results and Analysis
+## 6. Results and Analysis
 ### Cohort Member Composition
 ![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/08c59e6c-4f8c-4bd6-bc37-0b772cfc75ad)
 <br>As you can see, the first cohort (Dec 2009) has the highest number of members, consistently having twice as many as the other cohorts
@@ -72,13 +68,13 @@ The heatmap will help us identify patterns across cohorts by comparing the condi
 - The inactive customers contributed around 12% of total sales.
 - The first cohort, December 2009, has the lowest number of inactive customers at 34%.
 
-## 8. Conclusion
+## 7. Conclusion
 - The first cohort, December 2009, has made the most significant contribution to sales by over 50% of total sales. This is primarily because it has the largest number of members among all cohorts, making it stand out from the rest.
 - Almost all cohorts lose over 50% of their performance, both in sales and customer retention, by the second month from their establishment.
 - October and November are the most active months for each cohort. Meanwhile, January, February, and April are the months where cohort performance declines.
 - During the last 6 months, over 50% of customers have been inactive, where they have contributed 12% to total sales.
 
-## 9. Recommendation
+## 8. Recommendation
 1. Customer Engagement in Quarter 1. Pay special attention to customer engagement and satisfaction during Quarter 1. Conduct customer surveys, analyze feedback, and identify pain points to enhance the customer experience, particularly in the first quarter of each year.
 2. Optimize Sales Strategies. Optimize sales strategies for cohorts with more than 100 members. Larger cohorts naturally contribute significantly to sales. Focus on enhancing customer engagement and satisfaction within these cohorts to maximize their potential.
 
