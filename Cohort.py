@@ -1,0 +1,163 @@
+class CohortSimple:
+    def __init__(self, df, col_date, col_cust_id, col_order_id):
+        self.df = df
+        self.col_date = col_date
+        self.col_cust_id = col_cust_id        
+        self.col_order_id = col_order_id
+    
+    def get_cohort_frame(self, cohort_period, date_period, use_age_period=False):    
+        cohort_frame = self.df.copy()
+    
+        # First date for each unique ID
+        cust_date_grouped = cohort_frame.groupby(self.col_cust_id)[self.col_date]
+        cohort_frame['Initial Date'] = cust_date_grouped.transform("min")
+        cohort_frame['Latest Date'] = cust_date_grouped.transform("max")        
+        
+        # Get age (recency) for each unique ID
+        latest_date = cohort_frame[self.col_date].max()
+        cohort_frame['Recency'] = (latest_date-cohort_frame['Latest Date']).dt.days
+    
+        # Create Date Period and Cohort Period columns
+        cohort_frame['Period'] = cohort_frame[self.col_date].dt.to_period(date_period)
+        cohort_frame['Cohort'] = cohort_frame['Initial Date'].dt.to_period(cohort_period)
+    
+        # # Age for each unique ID (not really useful)
+        # df['ID Age'] = (
+        #     df['Period'].astype(int) - 
+        #     df['Initial Date'].dt.to_period(date_period).astype(int)
+        # )
+    
+        # Age for each unique Cohort (optional)
+        if use_age_period:
+            cohort_frame['Cohort Age'] = (
+                cohort_frame['Period'].astype(int) - 
+                cohort_frame.groupby('Cohort')['Period'].transform('min').astype(int)
+            )
+    
+        return cohort_frame    
+
+
+    def get_cohort_summary(self, cohort_frame, col_cohort, col_value):
+        ## Grouped by Customers
+        cust = cohort_frame.groupby(self.col_cust_id, as_index=False).agg(
+            Cohort = (col_cohort, 'first'),
+            Total_Value = (col_value, 'sum'),
+            Total_Order = (self.col_order_id, 'nunique'),
+            Recency = ('Recency', 'first')
+        )
+    
+        ## Grouped by Cohort
+        cohort = cust.groupby('Cohort').agg(
+            Size = ("Customer ID", "count"),
+            Active_in_30_Days = ('Recency', lambda x: sum(x.map(lambda y: True if y <= 30 else False))),
+            Total_Value = ('Total_Value', 'sum'),
+            Avg_Sales = ('Total_Value', 'mean'),    
+            Skew_Sales = ('Total_Value', 'skew'),
+            Total_Order = ('Total_Order', 'sum'),
+            Avg_Recency = ('Recency', 'mean')    
+        )        
+        
+        total_size = cohort['Size'].sum()
+        total_sales = cohort['Total_Value'].sum()
+        total_order = cohort['Total_Order'].sum()
+        
+        cohort['% Size'] = (cohort['Size'] / total_size) * 100
+        cohort['% Value'] =  (cohort['Total_Value'] / total_sales) * 100
+        cohort['% Order'] = (cohort['Total_Order'] / total_order) * 100
+        cohort['% Active in 30 Days'] = (cohort['Active_in_30_Days'] / cohort['Size']) * 100
+    
+        cohort.columns = cohort.columns.str.replace("_", " ")
+        cohort.columns = cohort.columns.str.replace("Value", col_value.title())
+        
+        cohort.index.name = col_cohort
+        cohort.columns.name = f"{col_value.title()} Summary"
+    
+        return cohort
+
+    def get_cohort_table(self, cohort_period, date_period, col_value, aggfunc='sum', use_age_period=False, ratio=True, margin_x=None, margin_y=None):
+        """
+        margin_x, margin_y = 'mean', 'sum', 'max', 'min', 'medium', 'std', 'var'
+        """
+        
+        COHORT_PERIOD = 'Cohort'
+        col_period = 'Cohort Age' if use_age_period else 'Period'
+
+        cohort_frame = self.get_cohort_frame(cohort_period, date_period, use_age_period)
+        cohort_table = cohort_frame.groupby([COHORT_PERIOD, col_period])[col_value].agg(aggfunc)
+        
+        cohort_table = cohort_table.unstack()        
+        cohort_table.index.name = f"{COHORT_PERIOD} ({cohort_period})"
+        cohort_table.columns.name = f"{col_period} ({date_period})"
+        
+        if ratio:
+            cohort_size = cohort_table.T.apply(lambda col: col.dropna().iloc[0])
+            cohort_table = cohort_table.divide(cohort_size, axis=0)
+    
+        if margin_y is not None:
+            cohort_table[margin_y] = cohort_table.agg(margin_y, axis=1)    
+        if margin_x is not None:
+            cohort_table.loc[margin_x] = cohort_table.agg(margin_x, axis=0)
+            
+        return cohort_table
+
+    def get_top_contributors(self, cohort_frame, col_value, aggfunc='sum', top_pct=0.2, include_ids=False):
+        df_cust = cohort_frame.groupby(self.col_cust_id).agg({
+            'Cohort': 'first', col_value: aggfunc
+        })    
+        df_top = df_cust.groupby(['Cohort']).agg(
+            top_size = (col_value, lambda x: int(top_pct*x.size)),
+            total_size = (col_value, lambda x: x.size),
+            top_value = (col_value, lambda x: sum(x.nlargest(int(top_pct*x.size)))),
+            total_value = (col_value, aggfunc)
+        )
+        df_top = df_top.assign(top_pct_of_total=lambda x: x['top_value']/x['total_value'])
+
+        # Add unique ID column
+        if include_ids:
+            n_size = df_cust.shape[0]
+    
+            # get sorting values with nlargest
+            df_cust = df_cust.groupby('Cohort')[col_value].nlargest(n_size).reset_index()
+            unique_ids = df_cust.groupby('Cohort')[self.col_cust_id].unique()
+            
+            df_top = df_top.merge(unique_ids, left_index=True, right_index=True)
+    
+            for idx, val in df_top.iterrows():
+                df_top.at[idx, self.col_cust_id] = val[self.col_cust_id][:val['top_size']]
+
+        df_top = df_top.rename({self.col_cust_id:'top_contributors'}, axis=1)
+
+        df_top.columns.name = f'Top {top_pct*100}%'
+        
+        return df_top
+
+    def get_lost_contributors(self, cohort_frame, col_value, aggfunc='sum', inactive_threshold=90):   
+        """
+        inactive_threshold: inactive more than n days
+        """
+        df_cust = cohort_frame.groupby(self.col_cust_id, as_index=False).agg({
+            'Recency': 'first', 
+            'Cohort': 'first',
+            col_value: aggfunc
+        })
+        df_base = df_cust.groupby('Cohort').agg(
+            total_value = (col_value, aggfunc), 
+            total_size = (self.col_cust_id, 'size')
+        )
+        
+        df_lost = df_cust.query(f'Recency > {inactive_threshold}')
+        df_lost = df_lost.groupby('Cohort').agg(
+            lost_size = (self.col_cust_id, 'size'),
+            lost_contributors = (self.col_cust_id, 'unique'),
+            lost_value = (col_value, aggfunc)
+        )
+
+        df_lost = df_base.merge(df_lost, left_index=True, right_index=True)
+        df_lost['lost_pct_of_total'] = df_lost['lost_value']/df_lost['total_value']
+        
+        ordered_cols = ['lost_size', 'total_size', 'lost_value', 
+                        'total_value', 'lost_pct_of_total', 'lost_contributors']  
+
+        df_lost.columns.name = f'Lost > {inactive_threshold} days'
+
+        return df_lost[ordered_cols]
