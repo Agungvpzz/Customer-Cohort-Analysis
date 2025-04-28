@@ -5,22 +5,27 @@
 ## 1. Introduction
 This report presents an in-depth analysis of customer cohorts. The analysis centers around understanding customer purchasing behavior, retention, and revenue patterns across different cohorts. Key findings shed light on customer trends, highlight high-performing cohorts, and provide actionable insights to enhance sales and customer satisfaction.
 
-## 2. Data Collection
-The dataset can be accessed at the following link: https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting
-
-## 3. Business Goals
+## 2. Business Understanding
+A. Business Goals
 Customer cohort analysis enables businesses to segment customers based on shared behaviors and analyze these groups over time, aiming to improve retention by identifying churn patterns and enhancing customer experiences.
 
-## 4. Objectives
-1. **Pattern Cohort Behaviour Discovery**: Identify and analyze behavioral patterns of different cohorts over time to understand their purchasing habits, frequency, and value.
-2. **Enhancing Retention Rates**: Determine which cohorts exhibit lower retention rates and develop targeted strategies to improve retention for these specific groups.
-3. **Discover Seasonal Effect**: Identify key periods during the year when customer sales typically decline or stagnate, indicating a potential need for promotional activities.
+B. Objective of this analysis
+Examine customer purchasing habits over time, focusing on frequency and value, to inform targeted strategies.
 
-## 5. Methodology
-- We divided our customer cohort based on the quarter the customers purchased
-- We used Python and utilized Python packages, such as Pandas for data analysis and Plotly for data visualization.
+C. Key Questions to Answer
+1. What are the retention rates for each customer group and how do they change over time?
+2. Which groups show the highest revenue growth?
+3. Are there common trends that help predict future behavior in these groups?
 
-## 6. Results and Analysis
+## 3. Data Collection
+The dataset can be accessed at the following link: https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting
+
+## 4. Methodology
+- Cohort Definition: Cohorts are defined based on the quarter of the customer's first purchase.
+- Metrics: The analysis includes customer retention rates, cohort composition, and revenue growth over time.
+- Data Period: Data analyzed spans 4 years from January 2015 to December 2018.
+
+## 5. Results and Analysis
 ### Cohort Member Composition
 ![image](https://github.com/user-attachments/assets/83cb6539-7946-493f-b0d8-1f172975f342)
 <br>As you can see, the cohorts from Q2, Q3, and Q4 of 2015 have the highest number of members, at approximately 20%.
