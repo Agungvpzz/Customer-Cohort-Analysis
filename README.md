@@ -27,11 +27,11 @@ The dataset can be accessed at the following link: https://www.kaggle.com/datase
 
 ## 5. Results and Analysis
 ### Cohort Member Composition
-![image](https://github.com/user-attachments/assets/83cb6539-7946-493f-b0d8-1f172975f342)
+![image](https://github.com/user-attachments/assets/e73dac3b-9c8a-4699-a517-020941f30e8a)
 <br>As you can see, the cohorts from Q2, Q3, and Q4 of 2015 have the highest number of members, at approximately 20%.
 
 ### Cohort Sales Composition
-![image](https://github.com/user-attachments/assets/4e17b861-a42f-454c-a88b-d67e3a2b643a)
+![image](https://github.com/user-attachments/assets/77fc9776-60a1-4cd0-8963-6d3d114e7a00)
 <br>All cohorts from the first year, 2015, contribute around 17–21% of total sales, accumulating to approximately 80% of the total sales.
 
 ### Customer Retention in each Cohort
@@ -44,7 +44,8 @@ With line charts displaying the cohorts in 2015 and 2016, we can clearly identif
 <br>
 
 The heatmap will help us identify patterns across cohorts by comparing the condition of each cohort during the same period (rows) and different periods (columns), both among different cohorts (row comparison) and within each cohort itself (column comparison). <br>
-![customer retention](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/ab227baf-133d-4052-a4af-21f23febd893)
+![image](https://github.com/user-attachments/assets/827a2719-c766-42f7-a9de-26f55d878b15)
+
 **The heatmap shows us:**
 - That 9 cohorts had their lowest retention in February 2011, followed by January 2011 with 8 cohorts.
 - That 10 cohorts reached their highest customer retention in November 2010, followed by October 2010 with 9 cohorts.
@@ -57,7 +58,7 @@ The heatmap will help us identify patterns across cohorts by comparing the condi
 - Almost all cohorts lose over 50% of their sales retention by the second month and tend to stabilize below 50% afterward (except cohort December 2009).
 <br>
 
-![sales retention](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/cd91d17b-85e7-4f44-b313-7928b3ca0848)
+![image](https://github.com/user-attachments/assets/d3359c4d-0ee2-426a-b176-5eac12ad0548)
 **The heatmap shows us:**
 - 9 cohorts experienced their lowest retention in February 2011, followed by April 2011 with 5 cohorts.
 - November 2010 had the highest retention for 9 cohorts, followed by October 2010 with 7 cohorts.
@@ -69,13 +70,13 @@ The heatmap will help us identify patterns across cohorts by comparing the condi
 - The inactive customers contributed around 12% of total sales.
 - The first cohort, December 2009, has the lowest number of inactive customers at 34%.
 
-## 7. Conclusion
-- The first cohort, December 2009, has made the most significant contribution to sales by over 50% of total sales. This is primarily because it has the largest number of members among all cohorts, making it stand out from the rest.
-- Almost all cohorts lose over 50% of their performance, both in sales and customer retention, by the second month from their establishment.
-- October and November are the most active months for each cohort. Meanwhile, January, February, and April are the months where cohort performance declines.
-- During the last 6 months, over 50% of customers have been inactive, where they have contributed 12% to total sales.
+## 7. Insights
+- In the retention rate heatmap, it's evident that most cohort-date groups exhibit varied retention rates ranging from 11.11% to 77.78%. Notably, the cohorts from the first year (2015) stand out, managing to retain customers above the 50% mark by the end of the date (2018Q4).
+- According to the cumulative sales line plot, it becomes apparent that cohorts from the first year have made the most significant contribution to sales. This is, of course, due to the fact that each cohort consists of more than 100 members, making them stand out from the rest. Among these cohorts, the one from 2015Q2 emerges as the leader in sales performance.
+- From the heatmap, we are able to catch the pattern among cohorts. All cohorts have similar behavior along the specific date. In every Quarter-1, all cohorts make the lower retention and gain back their best retention in Quarter-4.
 
 ## 8. Recommendation
-1. Customer Engagement in Quarter 1. Pay special attention to customer engagement and satisfaction during Quarter 1. Conduct customer surveys, analyze feedback, and identify pain points to enhance the customer experience, particularly in the first quarter of each year.
-2. Optimize Sales Strategies. Optimize sales strategies for cohorts with more than 100 members. Larger cohorts naturally contribute significantly to sales. Focus on enhancing customer engagement and satisfaction within these cohorts to maximize their potential.
+- Analyze First-Year Cohorts. Further analyze the behavior of cohorts from the first year (2015) that exhibit a significantly larger number of members. Identify the specific factors or strategies that contribute to their success. Apply successful tactics from these cohorts to other groups with lower retention rates.
+- Customer Engagement in Quarter-1. Pay special attention to customer engagement and satisfaction during Quarter-1. Conduct customer surveys, analyze feedback, and identify pain points to enhance the customer experience, particularly in the first quarter of each year.
+- Optimize Sales Strategies. Optimize sales strategies for cohorts with more than 100 members. Larger cohorts naturally contribute significantly to sales. Focus on enhancing customer engagement and satisfaction within these cohorts to maximize their potential.
 
