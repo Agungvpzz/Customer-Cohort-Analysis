@@ -47,21 +47,20 @@ The heatmap will help us identify patterns across cohorts by comparing the condi
 ![image](https://github.com/user-attachments/assets/827a2719-c766-42f7-a9de-26f55d878b15)
 
 **The heatmap shows us:**
-- That 9 cohorts had their lowest retention in February 2011, followed by January 2011 with 8 cohorts.
-- That 10 cohorts reached their highest customer retention in November 2010, followed by October 2010 with 9 cohorts.
+- Almost all cohorts from 2015 and 2016 struggled to retain customers in the first quarter of each year, with an average retention rate of less than 30%.
+- Almost all cohorts from 2015 and 2016 achieved their highest customer retention rate in the last quarter of each year, averaging above 30%.
 
 ### Sales Retention in each Cohort
-
-![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/16ac3eac-d133-4944-92bd-124990342027)
+![image](https://github.com/user-attachments/assets/a1346882-6d23-402b-9d39-8d6599005eec)
 **The line chart shows that:**
-- The first cohort, December 2009, has the highest sales compared to other cohorts.
-- Almost all cohorts lose over 50% of their sales retention by the second month and tend to stabilize below 50% afterward (except cohort December 2009).
+- All cohorts from 2015 had an average quarterly sales contribution three times higher than those from other years
+- Almost all cohorts lost over 50% of their sales retention by the second quarter of their existence.
 <br>
 
 ![image](https://github.com/user-attachments/assets/d3359c4d-0ee2-426a-b176-5eac12ad0548)
 **The heatmap shows us:**
-- 9 cohorts experienced their lowest retention in February 2011, followed by April 2011 with 5 cohorts.
-- November 2010 had the highest retention for 9 cohorts, followed by October 2010 with 7 cohorts.
+- Just like customer retention, all cohorts struggled to maintain sales in the first quarter of each year.
+- Across almost all cohorts, the fourth quarter of each year is the peak period for sales.
 
 ### Inactive Customers Over 6 Months in Each Cohort
 ![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/4ed29afa-e581-481a-8e8f-ff6dff09bb31)
