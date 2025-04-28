@@ -58,23 +58,16 @@ The heatmap will help us identify patterns across cohorts by comparing the condi
 <br>
 
 ![image](https://github.com/user-attachments/assets/d3359c4d-0ee2-426a-b176-5eac12ad0548)
-**The heatmap shows us:**
+<br>**The heatmap shows us:**
 - Just like customer retention, all cohorts struggled to maintain sales in the first quarter of each year.
 - Across almost all cohorts, the fourth quarter of each year is the peak period for sales.
 
-### Inactive Customers Over 6 Months in Each Cohort
-![image](https://github.com/Agungvpzz/Customer-Cohort-Analysis/assets/48642326/4ed29afa-e581-481a-8e8f-ff6dff09bb31)
-**The bar plot shows us:**
-- Overall, 50% of customers have been inactive in the last 6 months.
-- The inactive customers contributed around 12% of total sales.
-- The first cohort, December 2009, has the lowest number of inactive customers at 34%.
-
-## 7. Insights
+## 6. Insights
 - In the retention rate heatmap, it's evident that most cohort-date groups exhibit varied retention rates ranging from 11.11% to 77.78%. Notably, the cohorts from the first year (2015) stand out, managing to retain customers above the 50% mark by the end of the date (2018Q4).
 - According to the cumulative sales line plot, it becomes apparent that cohorts from the first year have made the most significant contribution to sales. This is, of course, due to the fact that each cohort consists of more than 100 members, making them stand out from the rest. Among these cohorts, the one from 2015Q2 emerges as the leader in sales performance.
 - From the heatmap, we are able to catch the pattern among cohorts. All cohorts have similar behavior along the specific date. In every Quarter-1, all cohorts make the lower retention and gain back their best retention in Quarter-4.
 
-## 8. Recommendation
+## 7. Recommendation
 - Analyze First-Year Cohorts. Further analyze the behavior of cohorts from the first year (2015) that exhibit a significantly larger number of members. Identify the specific factors or strategies that contribute to their success. Apply successful tactics from these cohorts to other groups with lower retention rates.
 - Customer Engagement in Quarter-1. Pay special attention to customer engagement and satisfaction during Quarter-1. Conduct customer surveys, analyze feedback, and identify pain points to enhance the customer experience, particularly in the first quarter of each year.
 - Optimize Sales Strategies. Optimize sales strategies for cohorts with more than 100 members. Larger cohorts naturally contribute significantly to sales. Focus on enhancing customer engagement and satisfaction within these cohorts to maximize their potential.
