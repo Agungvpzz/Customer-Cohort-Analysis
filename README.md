@@ -7,10 +7,10 @@ This report presents an in-depth analysis of customer cohorts. The analysis cent
 
 ## 2. Business Understanding
 A. Business Goals
-Customer cohort analysis enables businesses to segment customers based on shared behaviors and analyze these groups over time, aiming to improve retention by identifying churn patterns and enhancing customer experiences.
+<br>Customer cohort analysis enables businesses to segment customers based on shared behaviors and analyze these groups over time, aiming to improve retention by identifying churn patterns and enhancing customer experiences.
 
 B. Objective of this analysis
-Examine customer purchasing habits over time, focusing on frequency and value, to inform targeted strategies.
+<br>Examine customer purchasing habits over time, focusing on frequency and value, to inform targeted strategies.
 
 C. Key Questions to Answer
 1. What are the retention rates for each customer group and how do they change over time?
