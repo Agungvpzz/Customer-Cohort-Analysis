@@ -62,7 +62,7 @@ The heatmap will help us identify patterns across cohorts by comparing the condi
 - Just like customer retention, all cohorts struggled to maintain sales in the first quarter of each year.
 - Across almost all cohorts, the fourth quarter of each year is the peak period for sales.
 
-## 6. Insights
+## 6. Conclusions
 - In the retention rate heatmap, it's evident that most cohort-date groups exhibit varied retention rates ranging from 11.11% to 77.78%. Notably, the cohorts from the first year (2015) stand out, managing to retain customers above the 50% mark by the end of the date (2018Q4).
 - According to the cumulative sales line plot, it becomes apparent that cohorts from the first year have made the most significant contribution to sales. This is, of course, due to the fact that each cohort consists of more than 100 members, making them stand out from the rest. Among these cohorts, the one from 2015Q2 emerges as the leader in sales performance.
 - From the heatmap, we are able to catch the pattern among cohorts. All cohorts have similar behavior along the specific date. In every Quarter-1, all cohorts make the lower retention and gain back their best retention in Quarter-4.
