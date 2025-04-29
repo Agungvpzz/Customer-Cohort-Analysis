@@ -73,7 +73,7 @@ class Cohort:
         cohort.columns = cohort.columns.str.replace("Value", col_value.title())
         
         cohort.index.name = col_cohort
-        cohort.columns.name = f"{col_value.title()} Summary"
+        # cohort.columns.name = f"{col_value.title()} Summary"
     
         return cohort
 
