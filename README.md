@@ -63,15 +63,11 @@ The dataset can be accessed at the following link: https://www.kaggle.com/datase
 
 ---
 ### Customer Retention for each Cohort
-With line charts displaying the cohorts in 2015 and 2016, we can clearly identify which cohorts are valuable for the business and observe common patterns across cohorts. <br>
 ![image](https://github.com/user-attachments/assets/d41c50de-3dd0-4dc9-8683-70397b90148f)
-
-**The line chart shows that:**
+<br>**The line chart shows that:**
 - All the first-year cohorts from 2015 maintain varying customer retention ratios between 20% and 50%, with a mean of only 30–33%.
 - All 2015 and 2016 cohorts lose over 50% of their customer retention during the first quarter of their existence.
-<br>
 
-The heatmap will help us identify patterns across cohorts by comparing the condition of each cohort during the same period (rows) and different periods (columns), both among different cohorts (row comparison) and within each cohort itself (column comparison). <br>
 ![image](https://github.com/user-attachments/assets/a1ae0520-d042-4120-92dc-5e20970a493c)
 <br>**The heatmap shows us:**
 - Almost all cohorts from 2015 and 2016 struggled to retain customers in the first quarter of each year, with an average retention rate of less than 30%.
@@ -84,14 +80,17 @@ The heatmap will help us identify patterns across cohorts by comparing the condi
 ---
 ### Sales Analysis for each Cohort
 ![image](https://github.com/user-attachments/assets/7b3b1a79-abbd-45e1-aa2b-e5caa0d67c7f)
-**The line chart shows that:**
+<br>**The line chart shows that:**
 - All cohorts from 2015 had an average quarterly sales contribution three times higher than those from other years
 - Almost all cohorts lost over 50% of their sales retention by the second quarter of their existence.
 <br>
 
 ![image](https://github.com/user-attachments/assets/17c80eef-9014-49f8-bf83-ac185b3898da)
-![image](https://github.com/user-attachments/assets/8854a09e-cba1-4388-b351-d37668b9c5e3)
+<br>**The heatmap shows us:**
+- Just like customer retention, all cohorts struggled to maintain sales in the first quarter of each year.
+- Across almost all cohorts, the fourth quarter of each year is the peak period for sales.
 
+![image](https://github.com/user-attachments/assets/8854a09e-cba1-4388-b351-d37668b9c5e3)
 <br>**The heatmap shows us:**
 - Just like customer retention, all cohorts struggled to maintain sales in the first quarter of each year.
 - Across almost all cohorts, the fourth quarter of each year is the peak period for sales.
