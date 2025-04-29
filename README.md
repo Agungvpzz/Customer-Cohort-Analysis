@@ -22,8 +22,9 @@ The dataset can be accessed at the following link: https://www.kaggle.com/datase
 
 ## 4. Methodology
 - Cohort Definition: Cohorts are defined based on the quarter of the customer's first purchase.
-- Metrics: The analysis includes customer retention rates, cohort composition, and revenue growth over time.
 - Data Period: Data analyzed spans 4 years from January 2015 to December 2018.
+- Cohort Analysis Period: The analysis centers on cohorts from the years 2015 and 2016.
+- Main Analysis: Customer retention rates and sales growth over time.
 
 ## 5. Results and Analysis
 ### Cohort Member Composition
