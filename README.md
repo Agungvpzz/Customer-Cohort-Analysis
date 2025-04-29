@@ -35,9 +35,9 @@ The dataset can be accessed at the following link: https://www.kaggle.com/datase
 ![image](https://github.com/user-attachments/assets/77fc9776-60a1-4cd0-8963-6d3d114e7a00)
 <br>All cohorts from the first year, 2015, contribute around 17–21% of total sales, accumulating to approximately 80% of the total sales.
 
-### Customer Retention in each Cohort
+### Customer Retention
 With line charts displaying the cohorts in 2015 and 2016, we can clearly identify which cohorts are valuable for the business and observe common patterns across cohorts. <br>
-![image](https://github.com/user-attachments/assets/3680760d-d02a-4977-8626-d0daaa48bb21)
+![image](https://github.com/user-attachments/assets/d41c50de-3dd0-4dc9-8683-70397b90148f)
 
 **The line chart shows that:**
 - All the first-year cohorts from 2015 maintain varying customer retention ratios between 20% and 50%, with a mean of only 30–33%.
@@ -45,20 +45,24 @@ With line charts displaying the cohorts in 2015 and 2016, we can clearly identif
 <br>
 
 The heatmap will help us identify patterns across cohorts by comparing the condition of each cohort during the same period (rows) and different periods (columns), both among different cohorts (row comparison) and within each cohort itself (column comparison). <br>
-![image](https://github.com/user-attachments/assets/827a2719-c766-42f7-a9de-26f55d878b15)
+![image](https://github.com/user-attachments/assets/a1ae0520-d042-4120-92dc-5e20970a493c)
+![image](https://github.com/user-attachments/assets/4b2f1dd1-f00b-419e-bc85-1d64490445a7)
+
 
 **The heatmap shows us:**
 - Almost all cohorts from 2015 and 2016 struggled to retain customers in the first quarter of each year, with an average retention rate of less than 30%.
 - Almost all cohorts from 2015 and 2016 achieved their highest customer retention rate in the last quarter of each year, averaging above 30%.
 
-### Sales Retention in each Cohort
-![image](https://github.com/user-attachments/assets/a1346882-6d23-402b-9d39-8d6599005eec)
+### Sales Analysis
+![image](https://github.com/user-attachments/assets/7b3b1a79-abbd-45e1-aa2b-e5caa0d67c7f)
 **The line chart shows that:**
 - All cohorts from 2015 had an average quarterly sales contribution three times higher than those from other years
 - Almost all cohorts lost over 50% of their sales retention by the second quarter of their existence.
 <br>
 
-![image](https://github.com/user-attachments/assets/d3359c4d-0ee2-426a-b176-5eac12ad0548)
+![image](https://github.com/user-attachments/assets/17c80eef-9014-49f8-bf83-ac185b3898da)
+![image](https://github.com/user-attachments/assets/8854a09e-cba1-4388-b351-d37668b9c5e3)
+
 <br>**The heatmap shows us:**
 - Just like customer retention, all cohorts struggled to maintain sales in the first quarter of each year.
 - Across almost all cohorts, the fourth quarter of each year is the peak period for sales.
